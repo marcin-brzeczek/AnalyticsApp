@@ -4,13 +4,16 @@ import android.content.Context
 import android.util.Log
 import com.example.analyticsapp.BuildConfig
 import com.flurry.android.FlurryAgent
+import com.flurry.android.FlurryPerformance
 
 object AnalitycsManager {
 
     fun initAnalytics(context: Context) {
         FlurryAgent.Builder()
+            .withCaptureUncaughtExceptions(true)
+            .withIncludeBackgroundSessionsInMetrics(true)
             .withLogLevel(Log.VERBOSE)
-            .withLogEnabled(true)
+            .withPerformanceMetrics(FlurryPerformance.ALL)
             .build(context, BuildConfig.FLURRY_KEY)
     }
 

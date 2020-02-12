@@ -32,6 +32,7 @@ class NotificationFragment : Fragment() {
         notificationButton.setOnClickListener {
             AnalitycsManager.logEvent("CLICK_EVENT", mapOf("CLICK_EVENT" to "CLICK_NOTIFICATION_BUTTON"))
 
+            AnalitycsManager.logEvent("CLICK_EVENT", mapOf("CLICK_EVENT" to "CLICK_NOTIFICATION_BUTTON"))
             val notificationManager = context?.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
                 notificationManager.createNotificationChannel(NotificationChannel(
