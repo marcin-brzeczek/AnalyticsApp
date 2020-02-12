@@ -30,7 +30,9 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setListeners()
-        AnalitycsManager.logEvent("OPEN_SCREEN_EVENT", mapOf("CLICK_EVENT" to "HOME_FRAGMENT"))
+
+        AnalitycsManager.logEvent("OPEN_SCREEN_EVENT", mapOf("OPEN_SCREEN_EVENT" to "HOME_FRAGMENT"))
+
     }
 
     private fun setListeners() {
@@ -46,6 +48,7 @@ class HomeFragment : Fragment() {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         AnalitycsManager.logEvent("CLICK_EVENT", mapOf("CLICK_EVENT" to "CLICK_CART"))
+      
         return  item.onNavDestinationSelected(findNavController())  ||  return super.onOptionsItemSelected(item)
     }
 }

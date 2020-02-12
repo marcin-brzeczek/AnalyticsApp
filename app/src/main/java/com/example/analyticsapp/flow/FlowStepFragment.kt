@@ -43,12 +43,8 @@ class FlowStepFragment : Fragment() {
         view.findViewById<View>(R.id.next_button).setOnClickListener(
             Navigation.createNavigateOnClickListener(R.id.next_action).apply {
                 when (flowStepNumber) {
-                    2 -> {
-                        AnalitycsManager.logEvent("OPEN_SCREEN_EVENT", mapOf("OPEN_SCREEN_EVENT" to "STEP_TWO_FRAGMENT"))
-                    }
-                    else -> {
-                        AnalitycsManager.logEvent("OPEN_SCREEN_EVENT", mapOf("OPEN_SCREEN_EVENT" to "STEP_ONE_FRAGMENT"))
-                    }
+                    2 -> AnalitycsManager.logEvent("CLICK_EVENT", mapOf("CLICK_EVENT" to "CLICK_FINISH_FLOW"))
+                    else -> AnalitycsManager.logEvent("CLICK_EVENT", mapOf("CLICK_EVENT" to "CLICK_STEP_TWO"))
                 }
             }
         )

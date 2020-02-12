@@ -23,13 +23,14 @@ class NotificationFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
         AnalitycsManager.logEvent("OPEN_SCREEN_EVENT", mapOf("OPEN_SCREEN_EVENT" to "NOTIFICATION_FRAGMENT"))
+
         val message = view.findViewById<TextView>(R.id.args_edit_text)
         val notificationButton = view.findViewById<Button>(R.id.send_notification_button)
 
         notificationButton.setOnClickListener {
-            //todo "CLICK_EVENT : CLICK_NOTIFICATION_BUTTON")
-            //todo "CLICK_NOTIFICATION_BUTTON")
+            AnalitycsManager.logEvent("CLICK_EVENT", mapOf("CLICK_EVENT" to "CLICK_NOTIFICATION_BUTTON"))
 
             AnalitycsManager.logEvent("CLICK_EVENT", mapOf("CLICK_EVENT" to "CLICK_NOTIFICATION_BUTTON"))
             val notificationManager = context?.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
@@ -44,7 +45,9 @@ class NotificationFragment : Fragment() {
                     .setContentText(message.text.toString())
                     .setSmallIcon(R.drawable.ic_android)
                     .setAutoCancel(true)
-                    notificationManager.notify(0, builder.build())
+                    notificationManager.notify(0, builder.build()).also {
+                        AnalitycsManager.logEvent("SEND_NOTIFICATION_EVENT", mapOf("SEND_NOTIFICATION_EVENT" to message.text.toString()))
+                    }
         }
     }
 }
