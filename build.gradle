@@ -12,6 +12,7 @@ buildscript {
         constraintLayoutVersion = "2.0.0-alpha4"
         flurryVersion = '12.1.0'
         amplitudeVersion ='2.23.2'
+        mixpanelVersion = "5.+"
     }
 
     repositories {

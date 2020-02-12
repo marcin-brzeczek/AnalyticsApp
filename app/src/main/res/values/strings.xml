@@ -3,6 +3,7 @@
 <resources>
     <string name="app_name_amplitude">Analytics Amplitude</string>
     <string name="app_name_flurry">Analytics Flurry</string>
+    <string name="app_name_mixpanel">Analytics MixPanel</string>
 
     <!-- Menu strings -->
     <string name="shopping_cart">Shopping Cart</string>

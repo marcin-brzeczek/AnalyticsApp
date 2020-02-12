@@ -45,6 +45,16 @@ android {
 
             manifestPlaceholders = [appName: "@string/app_name_flurry"]
         }
+
+        mixpanel {
+            dimension "version"
+
+            buildConfigField "String", "MIXPANEL_KEY","\"$config.mixpanel\""
+
+            applicationIdSuffix ".mixpanel"
+
+            manifestPlaceholders = [appName: "@string/app_name_mixpanel"]
+        }
     }
 }
 
@@ -56,6 +66,9 @@ dependencies {
 
     //Flurry Analytics
     implementation "com.flurry.android:analytics:$rootProject.flurryVersion"
+
+    //MixPanel Analytics
+    implementation "com.mixpanel.android:mixpanel-android:$rootProject.mixpanelVersion"
 
     // Kotlin
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$rootProject.kotlinVersion"
