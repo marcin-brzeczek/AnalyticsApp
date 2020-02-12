@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.example.analyticsapp.R
+import com.example.analyticsapp.main.AnalitycsManager
 
 class SettingsFragment : Fragment() {
 
@@ -14,8 +15,7 @@ class SettingsFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        //todo "OPEN_SCREEN_EVENT : SETTINGS_FRAGMENT")
-        //todo "SETTINGS_FRAGMENT")
+        AnalitycsManager.logEvent("OPEN_SCREEN_EVENT", mapOf("OPEN_SCREEN_EVENT" to "SETTINGS_FRAGMENT"))
     }
 }
 
