@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation
 import androidx.navigation.fragment.navArgs
 import com.example.analyticsapp.R
+import com.example.analyticsapp.main.AnalitycsManager
 
 class FlowStepFragment : Fragment() {
 
@@ -26,13 +27,11 @@ class FlowStepFragment : Fragment() {
 
         return when (flowStepNumber) {
             2 -> {
-                //todo "OPEN_SCREEN_EVENT : STEP_TWO_FRAGMENT")
-                //todo "STEP_TWO_FRAGMENT")
+                AnalitycsManager.logEvent("OPEN_SCREEN_EVENT", mapOf("OPEN_SCREEN_EVENT" to "STEP_TWO_FRAGMENT"))
                 inflater.inflate(R.layout.flow_step_two_fragment, container, false)
             }
             else -> {
-                //todo "OPEN_SCREEN_EVENT : STEP_ONE_FRAGMENT")
-                //todo "STEP_ONE_FRAGMENT")
+                AnalitycsManager.logEvent("OPEN_SCREEN_EVENT", mapOf("OPEN_SCREEN_EVENT" to "STEP_ONE_FRAGMENT"))
                 inflater.inflate(R.layout.flow_step_one_fragment, container, false)
             }
         }
@@ -45,13 +44,10 @@ class FlowStepFragment : Fragment() {
             Navigation.createNavigateOnClickListener(R.id.next_action).apply {
                 when (flowStepNumber) {
                     2 -> {
-                        //todo "OPEN_SCREEN_EVENT : STEP_TWO_FRAGMENT")
-                        //todo "STEP_TWO_FRAGMENT")
-
+                        AnalitycsManager.logEvent("OPEN_SCREEN_EVENT", mapOf("OPEN_SCREEN_EVENT" to "STEP_TWO_FRAGMENT"))
                     }
                     else -> {
-                        //todo "OPEN_SCREEN_EVENT : STEP_ONE_FRAGMENT")
-                        //todo "STEP_ONE_FRAGMENT")
+                        AnalitycsManager.logEvent("OPEN_SCREEN_EVENT", mapOf("OPEN_SCREEN_EVENT" to "STEP_ONE_FRAGMENT"))
                     }
                 }
             }

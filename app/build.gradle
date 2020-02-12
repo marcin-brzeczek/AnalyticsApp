@@ -55,7 +55,7 @@ dependencies {
     implementation "com.amplitude:android-sdk:$rootProject.amplitudeVersion"
 
     //Flurry Analytics
-    implementation "com.flurry.android:analytics:${flurryVersion}@aar"
+    implementation "com.flurry.android:analytics:$rootProject.flurryVersion"
 
     // Kotlin
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$rootProject.kotlinVersion"

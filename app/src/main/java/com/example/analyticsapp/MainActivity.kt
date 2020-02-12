@@ -70,8 +70,6 @@ class MainActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
 
         AnalitycsManager.logEvent("CLICK_EVENT", mapOf("CLICK_EVENT" to "CLICK_SETTINGS_MENU"))
-        //todo "CLICK_EVENT : CLICK_SETTINGS_MENU")
-        //todo "CLICK_SETTINGS_MENU")
         return item.onNavDestinationSelected(findNavController(R.id.my_nav_host_fragment)) || super.onOptionsItemSelected(
             item
         )
