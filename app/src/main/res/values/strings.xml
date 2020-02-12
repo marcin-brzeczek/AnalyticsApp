@@ -1,4 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+
 <resources>
-    <string name="app_name">AnalyticsApp</string>
-    <string name="second_screen">Second Screen</string>
+    <string name="app_name_amplitude">Analytics Amplitude</string>
+    <string name="app_name_flurry">Analytics Flurry</string>
+
+    <!-- Menu strings -->
+    <string name="shopping_cart">Shopping Cart</string>
+    <string name="settings">Settings</string>
+    <string name="home">Home</string>
+    <string name="deeplink">Notificton Fragment</string>
+
+    <!-- Screen strings -->
+    <string name="step_one">Step One</string>
+    <string name="step_two">Step Two</string>
+    <string name="deep_link_instructions">Type your notification message</string>
+    <string name="settings_fragment_text">Settings Fragment</string>
+    <string name="shopping_fragment_text">Shopping Fragment</string>
+    <string name="navigate_destination_button">START</string>
+    <string name="navigate_action_button">Navigate with action</string>
+    <string name="next_step_button">Navigate next step</string>
+    <string name="finish_button">Finish Flow</string>
+    <string name="send_deep_link_notification_button">Send notification</string>
+    <string name="shopping">Shopping</string>
 </resources>

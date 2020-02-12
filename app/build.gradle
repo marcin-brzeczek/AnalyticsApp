@@ -1,8 +1,8 @@
 apply plugin: 'com.android.application'
-
 apply plugin: 'kotlin-android'
-
 apply plugin: 'kotlin-android-extensions'
+apply plugin: 'androidx.navigation.safeargs.kotlin'
+apply plugin: 'com.flurry.android.symbols'
 
 android {
     compileSdkVersion 29
@@ -21,15 +21,56 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+
+    flavorDimensions "version"
+
+    productFlavors {
+
+        amplitude {
+            dimension "version"
+
+            buildConfigField "String", "AMPLITUDE_KEY", "\"$config.amplitude\""
+
+            applicationIdSuffix ".amplitude"
+
+            manifestPlaceholders = [appName: "@string/app_name_amplitude"]
+        }
+
+        flurry {
+            dimension "version"
+
+            buildConfigField "String", "FLURRY_KEY","\"$config.flurry\""
+
+            applicationIdSuffix ".flurry"
+
+            manifestPlaceholders = [appName: "@string/app_name_flurry"]
+        }
+    }
 }
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
-    implementation 'androidx.appcompat:appcompat:1.0.2'
-    implementation 'androidx.core:core-ktx:1.0.2'
-    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
-    testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.0'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.1'
+
+    //Amplitude Analytics
+    implementation "com.amplitude:android-sdk:$rootProject.amplitudeVersion"
+
+    //Flurry Analytics
+    implementation "com.flurry.android:analytics:${flurryVersion}@aar"
+
+    // Kotlin
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$rootProject.kotlinVersion"
+
+    implementation "com.google.android.material:material:$rootProject.materialVersion"
+    implementation "androidx.appcompat:appcompat:$rootProject.appCompatVersion"
+    implementation "androidx.recyclerview:recyclerview:$rootProject.recyclerVersion"
+
+    implementation "androidx.constraintlayout:constraintlayout:$rootProject.constraintLayoutVersion"
+
+    //Navigation
+    implementation "androidx.navigation:navigation-fragment-ktx:$rootProject.navigationVersion"
+    implementation "androidx.navigation:navigation-ui-ktx:$rootProject.navigationVersion"
+}
+
+flurryCrash {
+    configPath "app/flurry.config"
 }
