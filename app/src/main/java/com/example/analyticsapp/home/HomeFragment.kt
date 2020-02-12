@@ -30,16 +30,12 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setListeners()
-        //todo "OPEN_SCREEN_EVENT : HOME_FRAGMENT"
-//        TODO("OPEN_SCREEN_EVENT : HOME_FRAGMENT")
-//        TODO("OPEN_HOME_FRAGMENT")
+        AnalitycsManager.logEvent("OPEN_SCREEN_EVENT", mapOf("OPEN_SCREEN_EVENT" to "HOME_FRAGMENT"))
     }
 
     private fun setListeners() {
         navigate_destination_button.setOnClickListener {
-            //todo "CLICK_EVENT : CLICK_START_BUTTON")
-            //todo "CLICK_START_BUTTON")
-            AnalitycsManager.logEvent("START BUTTON")
+            AnalitycsManager.logEvent("CLICK_EVENT", mapOf("CLICK_EVENT" to "CLICK_START_BUTTON"))
             findNavController().navigate(R.id.flow_step_one_dest, null, navigationOptions)
         }
     }
@@ -49,9 +45,7 @@ class HomeFragment : Fragment() {
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        //todo "CLICK_EVENT: CLICK_CART")
-        //todo "CLICK_CART")
-
+        AnalitycsManager.logEvent("CLICK_EVENT", mapOf("CLICK_EVENT" to "CLICK_CART"))
        return  item.onNavDestinationSelected(findNavController())  ||  return super.onOptionsItemSelected(item)
     }
 }

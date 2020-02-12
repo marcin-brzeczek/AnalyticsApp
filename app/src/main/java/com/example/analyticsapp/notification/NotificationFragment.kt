@@ -14,6 +14,7 @@ import androidx.core.app.NotificationCompat
 import androidx.fragment.app.Fragment
 
 import com.example.analyticsapp.R
+import com.example.analyticsapp.main.AnalitycsManager
 
 class NotificationFragment : Fragment() {
 
@@ -23,15 +24,13 @@ class NotificationFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        //todo "OPEN_SCREEN_EVENT : NOTIFICATION_FRAGMENT")
-        //todo "NOTIFICATION_FRAGMENT")
+        AnalitycsManager.logEvent("OPEN_SCREEN_EVENT", mapOf("OPEN_SCREEN_EVENT" to "NOTIFICATION_FRAGMENT"))
 
         val message = view.findViewById<TextView>(R.id.args_edit_text)
         val notificationButton = view.findViewById<Button>(R.id.send_notification_button)
 
         notificationButton.setOnClickListener {
-            //todo "CLICK_EVENT : CLICK_NOTIFICATION_BUTTON")
-            //todo "CLICK_NOTIFICATION_BUTTON")
+            AnalitycsManager.logEvent("CLICK_EVENT", mapOf("CLICK_EVENT" to "CLICK_NOTIFICATION_BUTTON"))
 
             val notificationManager = context?.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {

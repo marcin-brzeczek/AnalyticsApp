@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.example.analyticsapp.R
+import com.example.analyticsapp.main.AnalitycsManager
 
 class ShoppingFragment : Fragment() {
 
@@ -14,7 +15,6 @@ class ShoppingFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        //todo "OPEN_SCREEN_EVENT : SHOPPING_FRAGMENT")
-        //todo "SHOPPING_FRAGMENT")
+        AnalitycsManager.logEvent("OPEN_SCREEN_EVENT", mapOf("OPEN_SCREEN_EVENT" to "SHOPPING_FRAGMENT"))
     }
 }
