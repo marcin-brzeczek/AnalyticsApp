@@ -14,7 +14,7 @@ class ShoppingFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        TODO("OPEN_SCREEN_EVENT : SHOPPING_FRAGMENT")
-        TODO("SHOPPING_FRAGMENT")
+        //todo "OPEN_SCREEN_EVENT : SHOPPING_FRAGMENT")
+        //todo "SHOPPING_FRAGMENT")
     }
 }

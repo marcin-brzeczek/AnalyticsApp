@@ -19,13 +19,13 @@ class FlowStepFragment : Fragment() {
 
         return when (flowStepNumber) {
             2 -> {
-                TODO("OPEN_SCREEN_EVENT : STEP_TWO_FRAGMENT")
-                TODO("STEP_TWO_FRAGMENT")
+                //todo "OPEN_SCREEN_EVENT : STEP_TWO_FRAGMENT")
+                //todo "STEP_TWO_FRAGMENT")
                 inflater.inflate(R.layout.flow_step_two_fragment, container, false)
             }
             else -> {
-                TODO("OPEN_SCREEN_EVENT : STEP_ONE_FRAGMENT")
-                TODO("STEP_ONE_FRAGMENT")
+                //todo "OPEN_SCREEN_EVENT : STEP_ONE_FRAGMENT")
+                //todo "STEP_ONE_FRAGMENT")
                 inflater.inflate(R.layout.flow_step_one_fragment, container, false)
             }
         }
@@ -35,14 +35,14 @@ class FlowStepFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         view.findViewById<View>(R.id.next_button_one_fragment).setOnClickListener{
-            TODO("CLICK_EVENT : CLICK_NAVIGATE_NEXT_STEP_BUTTON")
-            TODO("CLICK_NAVIGATE_NEXT_STEP_BUTTON")
+            //todo "CLICK_EVENT : CLICK_NAVIGATE_NEXT_STEP_BUTTON")
+            //todo "CLICK_NAVIGATE_NEXT_STEP_BUTTON")
             Navigation.createNavigateOnClickListener(R.id.next_action)
         }
 
         view.findViewById<View>(R.id.next_button_one_fragment).setOnClickListener{
-            TODO("CLICK_EVENT : CLICK_FINISH_FLOW_BUTTON")
-            TODO("CLICK_FINISH_FLOW_BUTTON")
+            //todo "CLICK_EVENT : CLICK_FINISH_FLOW_BUTTON")
+            //todo "CLICK_FINISH_FLOW_BUTTON")
             Navigation.createNavigateOnClickListener(R.id.next_action)
         }
     }

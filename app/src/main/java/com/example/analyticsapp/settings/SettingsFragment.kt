@@ -14,8 +14,8 @@ class SettingsFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        TODO("OPEN_SCREEN_EVENT : SETTINGS_FRAGMENT")
-        TODO("SETTINGS_FRAGMENT")
+        //todo "OPEN_SCREEN_EVENT : SETTINGS_FRAGMENT")
+        //todo "SETTINGS_FRAGMENT")
     }
 }
 
