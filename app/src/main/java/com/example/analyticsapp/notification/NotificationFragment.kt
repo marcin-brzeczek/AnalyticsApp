@@ -44,7 +44,9 @@ class NotificationFragment : Fragment() {
                     .setContentText(message.text.toString())
                     .setSmallIcon(R.drawable.ic_android)
                     .setAutoCancel(true)
-                    notificationManager.notify(0, builder.build())
+                    notificationManager.notify(0, builder.build()).also {
+                        AnalitycsManager.logEvent("SEND_NOTIFICATION_EVENT", mapOf("SEND_NOTIFICATION_EVENT" to message.text.toString()))
+                    }
         }
     }
 }
